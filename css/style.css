@@ -1,0 +1,1541 @@
+@font-face {
+  font-family: "Montserrat";
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yeseva One";
+  font-display: swap;
+  src: url("../fonts/ofont.woff") format("woff"), url("../fonts/ofont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header {
+  background-image: url("../img/bg/bg-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-bg {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(rgba(0, 0, 0, 0.93)), color-stop(rgba(0, 0, 0, 0.87)), color-stop(rgba(0, 0, 0, 0.8)), color-stop(rgba(0, 0, 0, 0.73)), color-stop(rgba(0, 0, 0, 0.66)), color-stop(rgba(0, 0, 0, 0.6)), color-stop(rgba(0, 0, 0, 0.53)), color-stop(rgba(0, 0, 0, 0.46)), color-stop(rgba(0, 0, 0, 0.39)), color-stop(rgba(0, 0, 0, 0.33)), to(rgba(0, 0, 0, 0.26)));
+  background-image: -o-linear-gradient(bottom, black, rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.73), rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.53), rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.26));
+  background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.73), rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.53), rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.26));
+}
+
+.header-nav {
+  padding-top: 30px;
+  margin-bottom: 215px;
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.nav__link {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  -webkit-transition: color .3s linear;
+  -o-transition: color .3s linear;
+  transition: color .3s linear;
+}
+
+.nav__link:hover {
+  color: #F7C765;
+}
+
+.burger-menu__button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 30;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: none;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+}
+
+.burger-menu.active .burger-menu__button,
+.burger-menu.active .burger-menu__lines {
+  background-color: transparent;
+}
+
+.burger-menu.active .burger-menu__lines::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.burger-menu.active .burger-menu__lines::after {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.burger-menu__lines,
+.burger-menu__lines::after,
+.burger-menu__lines::before {
+  position: absolute;
+  width: 40px;
+  height: 6px;
+  background-color: #fff;
+}
+
+.burger-menu__lines {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-filter .2s linear;
+  transition: -webkit-filter .2s linear;
+  -o-transition: filter .2s linear;
+  transition: filter .2s linear;
+  transition: filter .2s linear, -webkit-filter .2s linear;
+}
+
+.burger-menu__lines:hover {
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+}
+
+.burger-menu__lines::after {
+  content: "";
+  top: 12px;
+}
+
+.burger-menu__lines::before {
+  content: "";
+  top: -12px;
+}
+
+.burger-menu__nav {
+  padding-top: 80px;
+  position: fixed;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 100%;
+  background-color: #2a2a2a;
+  overflow-y: auto;
+  right: -100%;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+.burger-menu.active .burger-menu__nav {
+  right: 0;
+}
+
+.burger-menu__link {
+  padding: 30px;
+  font-family: "Yeseva One";
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 400;
+  color: #fff;
+  -webkit-transition: color .3s linear;
+  -o-transition: color .3s linear;
+  transition: color .3s linear;
+}
+
+.burger-menu__link:hover {
+  color: #F7C765;
+}
+
+.burger-menu__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.burger-menu.active .burger-menu__overlay {
+  display: block;
+}
+
+.header__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 90px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin-left: 193px;
+  margin-bottom: 50px;
+}
+
+.header__text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin-bottom: 70px;
+  margin-left: 193px;
+  max-width: 600px;
+}
+
+.header__btn {
+  margin-bottom: 250px;
+}
+
+.btn {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #F7C765;
+  border: 2px solid #F7C765;
+  border-radius: 40px;
+  margin-left: 193px;
+  padding: 20px 30px;
+  -webkit-transition: background-color .3s linear;
+  -o-transition: background-color .3s linear;
+  transition: background-color .3s linear;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.about {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: #F7C765;
+  margin-bottom: 20px;
+}
+
+.about__text {
+  max-width: 690px;
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0 auto 110px;
+}
+
+.about__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.about__left-img {
+  margin-bottom: 167px;
+}
+
+.about__left-descr {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.about__left-descr svg {
+  position: absolute;
+  left: -42%;
+  fill: none;
+  width: 380px;
+}
+
+.left-descr__number {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 70px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  margin-right: 70px;
+}
+
+.left-descr__text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  max-width: 228px;
+  display: block;
+  margin-left: auto;
+}
+
+.about__right {
+  margin-top: 120px;
+}
+
+.acquaintance {
+  padding-top: 148px;
+  padding-bottom: 150px;
+}
+
+.acquaintance__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 100px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 82px;
+}
+
+.acquaintance__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.acquaintance__content-img {
+  margin-right: 100px;
+}
+
+.acquaintance__content-text {
+  max-width: 410px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  position: relative;
+}
+
+.acquaintance__content-text svg {
+  position: absolute;
+  fill: none;
+  top: -50%;
+  right: -90%;
+  width: 400px;
+}
+
+.kamchatka {
+  padding-bottom: 150px;
+}
+
+.kamchatka__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 100px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+
+.kamchatka__content {
+  position: relative;
+}
+
+.kamchatka__content-img {
+  padding-bottom: 150px;
+}
+
+.kamchatka__content-img img {
+  width: auto;
+  margin: 0 auto;
+}
+
+.kamchatka__content-svg {
+  position: absolute;
+  bottom: 0;
+}
+
+.kamchatka__content-svg svg {
+  fill: transparent;
+  width: 380px;
+}
+
+.kamchatka__content-descr {
+  position: absolute;
+  top: 31%;
+  right: 18%;
+}
+
+.kamchatka__content-descr__number {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 120px;
+  line-height: 70px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.kamchatka__content-descr__text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+
+.kamchatka__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.kamchatka__item {
+  max-width: 400px;
+  margin: 0 134px;
+}
+
+.kamchatka__item-subtitle {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2em;
+  color: #F7C765;
+  margin-bottom: 21px;
+}
+
+.kamchatka__item-title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.kamchatka__item-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+.kamchatka__item-img img {
+  width: auto;
+}
+
+.kavkaz {
+  padding-bottom: 150px;
+}
+
+.kavkaz__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 100px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 78px;
+}
+
+.kavkaz__img {
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.kavkaz__img img {
+  width: auto;
+  margin: 0 auto;
+}
+
+.kavkaz__img-text {
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+}
+
+.kavkaz__img-text__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 50px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.kavkaz__img-text__descr {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin-left: 250px;
+}
+
+.kavkaz__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.kavkaz__item-amanauz {
+  max-width: 540px;
+  margin-right: 160px;
+}
+
+.kavkaz__item-elbrus {
+  max-width: 470px;
+  margin-top: 117px;
+}
+
+.kavkaz__item-img img {
+  width: auto;
+}
+
+.kavkaz__item-subtitle__amanauz {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2em;
+  color: #F7C765;
+  margin-top: 132px;
+  margin-left: 90px;
+}
+
+.kavkaz__item-title__amanauz {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  color: #FFFFFF;
+  margin: 10px 0 20px 90px;
+}
+
+.kavkaz__item-text__amanauz {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  max-width: 344px;
+  margin-left: 90px;
+}
+
+.kavkaz__item-subtitle__elbrus {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2em;
+  color: #F7C765;
+  margin-bottom: 10px;
+}
+
+.kavkaz__item-title__elbrus {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.kavkaz__item-text__elbrus {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  max-width: 373px;
+  margin-bottom: 111px;
+}
+
+.baikal {
+  background-image: url("../img/bg/bg-2.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.baikal__gradient {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(rgba(0, 0, 0, 0.85)), color-stop(rgba(0, 0, 0, 0.69)), color-stop(rgba(0, 0, 0, 0.54)), color-stop(rgba(0, 0, 0, 0.38)), color-stop(rgba(0, 0, 0, 0.23)), color-stop(rgba(0, 0, 0, 0.36)), color-stop(rgba(0, 0, 0, 0.49)), color-stop(rgba(0, 0, 0, 0.62)), color-stop(rgba(0, 0, 0, 0.74)), color-stop(rgba(0, 0, 0, 0.87)), to(black));
+  background-image: -o-linear-gradient(bottom, black, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.87), black);
+  background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.87), black);
+}
+
+.baikal__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 100px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+
+.baikal__wrapper {
+  position: relative;
+}
+
+.baikal__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.baikal__content-img {
+  margin-right: 86px;
+}
+
+.baikal__content-text {
+  max-width: 640px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin-top: 69px;
+}
+
+.baikal__descr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(-30%);
+      -ms-transform: translateY(-30%);
+          transform: translateY(-30%);
+}
+
+.baikal__descr-text {
+  margin-right: 286px;
+}
+
+.baikal__descr-text__number {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 50px;
+  color: #FFFFFF;
+  margin-bottom: 100px;
+}
+
+.baikal__descr-text__number span {
+  display: block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+
+.glamping {
+  padding-bottom: 150px;
+}
+
+.glamping__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+
+.glamping__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.glamping__content-left {
+  margin-right: 80px;
+}
+
+.glamping__content-right {
+  margin-left: 80px;
+}
+
+.glamping__content-left__img img {
+  width: auto;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.glamping__content-left__text {
+  max-width: 480px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+
+.glamping__content-right__text {
+  max-width: 470px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+
+.glamping__content-right__img img {
+  width: auto;
+  margin: 0 auto;
+}
+
+.places {
+  padding-bottom: 250px;
+}
+
+.places__subtitle {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.2em;
+  color: #F7C765;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.places__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+
+.places__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 29px;
+  grid-row-gap: 0px;
+}
+
+.places__item {
+  position: relative;
+  width: 100%;
+}
+
+.places__item-img {
+  height: 440px;
+  overflow: hidden;
+}
+
+.places__item-img img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  -webkit-transition: -webkit-transform .3s ease-in;
+  transition: -webkit-transform .3s ease-in;
+  -o-transition: transform .3s ease-in;
+  transition: transform .3s ease-in;
+  transition: transform .3s ease-in, -webkit-transform .3s ease-in;
+}
+
+.places__item-img img:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.places__item-subtitle {
+  position: absolute;
+  bottom: 116px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.2em;
+  color: #F7C765;
+}
+
+.places__item-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 35px;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  width: 320px;
+}
+
+.footer {
+  padding-bottom: 50px;
+}
+
+.footer__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer__nav-link {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 36px;
+}
+
+.footer__copy {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.bg-section {
+  background-image: url("../img/bg/bg-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-section__gradient {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(rgba(0, 0, 0, 0.86)), color-stop(rgba(0, 0, 0, 0.72)), color-stop(rgba(0, 0, 0, 0.59)), color-stop(rgba(0, 0, 0, 0.45)), color-stop(rgba(0, 0, 0, 0.31)), color-stop(rgba(0, 0, 0, 0.43)), color-stop(rgba(0, 0, 0, 0.54)), color-stop(rgba(0, 0, 0, 0.66)), color-stop(rgba(0, 0, 0, 0.77)), color-stop(rgba(0, 0, 0, 0.89)), to(black));
+  background-image: -o-linear-gradient(bottom, black, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.43), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.89), black);
+  background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.43), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.89), black);
+}
+
+.bg-section-footer {
+  background-image: url("../img/bg/bg-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-section__gradient-footer {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(rgba(0, 0, 0, 0.93)), color-stop(rgba(0, 0, 0, 0.87)), color-stop(rgba(0, 0, 0, 0.8)), color-stop(rgba(0, 0, 0, 0.74)), color-stop(rgba(0, 0, 0, 0.67)), color-stop(rgba(0, 0, 0, 0.61)), color-stop(rgba(0, 0, 0, 0.54)), color-stop(rgba(0, 0, 0, 0.48)), color-stop(rgba(0, 0, 0, 0.41)), color-stop(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.28)));
+  background-image: -o-linear-gradient(top, black, rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.41), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.28));
+  background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.41), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.28));
+}
+
+.arrowUp {
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  background: -o-linear-gradient(320deg, #534c45 50%, #f7c66591 50%);
+  background: linear-gradient(130deg, #534c45 50%, #f7c66591 50%);
+  background-size: 300%;
+  border-radius: 10px;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  padding: 10px;
+}
+
+.arrowUp:hover {
+  background-position: 100% 0;
+}
+
+.arrowUp svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+@media (max-width: 1700px) {
+  .acquaintance__content-text svg {
+    right: -50%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .acquaintance__content-text svg {
+    right: -30%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .acquaintance__content-text svg {
+    right: -10%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .kamchatka__content-descr {
+    right: 10%;
+  }
+
+  .kamchatka__content-descr {
+    right: 5%;
+  }
+
+  .places__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .acquaintance__content-text svg {
+    right: 0;
+  }
+}
+
+@media (max-width: 1220px) {
+  .kavkaz__item-amanauz {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .baikal__descr {
+    -webkit-transform: translateY(-15%);
+        -ms-transform: translateY(-15%);
+            transform: translateY(-15%);
+  }
+
+  .baikal__descr-text__number {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .kamchatka__content-descr__number {
+    font-size: 90px;
+  }
+
+  .glamping {
+    padding-bottom: 50px;
+  }
+
+  .glamping__content {
+    display: block;
+  }
+
+  .glamping__content-left {
+    margin-right: 0;
+    margin-bottom: 80px;
+  }
+
+  .glamping__content-right {
+    margin-left: 0;
+  }
+
+  .glamping__content-left__text {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .glamping__content-right__text {
+    margin: 0 auto;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .about__content {
+    display: block;
+  }
+
+  .about__left-img {
+    margin-bottom: 60px;
+  }
+
+  .about__left-img img {
+    width: auto;
+    margin: auto;
+  }
+
+  .left-descr__number {
+    font-size: 60px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .left-descr__text {
+    margin: auto;
+  }
+
+  .about__right {
+    margin-top: 60px;
+  }
+
+  .about__right img {
+    width: auto;
+    margin: auto;
+  }
+
+  .kamchatka__item {
+    margin: 0 50px;
+  }
+
+  .kavkaz__items {
+    display: block;
+  }
+
+  .kavkaz__item-amanauz {
+    margin: 0 auto;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+
+  .kavkaz__item-elbrus {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .kavkaz__item-subtitle__amanauz {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+
+  .kavkaz__item-title__amanauz {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .kavkaz__item-text__amanauz {
+    margin: 0 auto;
+  }
+
+  .kavkaz__item-text__elbrus {
+    margin: 0 auto 30px;
+  }
+
+  .baikal__descr-text {
+    margin-right: 200px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header-nav {
+    padding-top: .1px;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .burger-menu__button {
+    display: block;
+  }
+
+  .header__title {
+    margin-left: 100px;
+  }
+
+  .header__text {
+    margin-left: 100px;
+  }
+
+  .btn {
+    margin-left: 100px;
+  }
+
+  .acquaintance__content {
+    display: block;
+  }
+
+  .acquaintance__content-img {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .acquaintance__content-img img {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .acquaintance__content-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .acquaintance__content-text svg {
+    left: 0;
+    top: 50%;
+  }
+
+  .kamchatka__content-img img {
+    width: 100%;
+  }
+
+  .kamchatka__items {
+    display: block;
+    text-align: center;
+  }
+
+  .kamchatka__item:first-child {
+    margin-bottom: 40px;
+  }
+
+  .kamchatka__item {
+    margin: 0 auto;
+  }
+
+  .kavkaz__img {
+    margin-bottom: 50px;
+  }
+
+  .kavkaz__img img {
+    width: 100%;
+  }
+
+  .kavkaz__img-text {
+    left: 10%;
+  }
+
+  .kavkaz__img-text__title {
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  .kavkaz__img-text__descr {
+    font-size: 16px;
+    margin-left: 160px;
+  }
+
+  .baikal__gradient {
+    padding-bottom: 50px;
+  }
+
+  .baikal__content {
+    display: block;
+  }
+
+  .baikal__content-img {
+    margin: 0;
+  }
+
+  .baikal__content-img img {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .baikal__content-text {
+    text-align: center;
+    margin: 50px auto 0;
+  }
+
+  .baikal__descr {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    display: block;
+    margin-top: 50px;
+  }
+
+  .baikal__descr-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .baikal__descr-img img {
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 850px) {
+  .header__title {
+    font-size: 60px;
+  }
+
+  .header__text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-nav {
+    margin-bottom: 100px;
+  }
+
+  .kamchatka__content-descr__number {
+    font-size: 60px;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .kamchatka__content-descr__text {
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .about__text {
+    font-size: 30px;
+  }
+
+  .about__text {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .kamchatka {
+    padding-bottom: 50px;
+  }
+
+  .places {
+    padding-bottom: 50px;
+  }
+
+  .places__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 25px;
+  }
+}
+
+@media (max-width: 680px) {
+  .acquaintance__title {
+    font-size: 60px;
+  }
+
+  .acquaintance__content-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .kavkaz__title {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+
+  .kavkaz__img-text__title {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .kavkaz__img-text__descr {
+    font-size: 14px;
+    margin-left: 80px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  .header__text {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 60px;
+  }
+
+  .header__btn {
+    margin: 0 20px 100px;
+  }
+
+  .btn {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    font-size: 14px;
+    padding: 10 0;
+    text-align: center;
+  }
+
+  .acquaintance {
+    padding-bottom: 70px;
+    padding-top: 70px;
+  }
+
+  .kavkaz {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 590px) {
+  .kavkaz__item-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 570px) {
+  .baikal__content-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .about__right img {
+    width: 100%;
+  }
+
+  .baikal__descr-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 530px) {
+  .glamping__content-right__img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .kamchatka__title {
+    font-size: 50px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+  }
+
+  .kamchatka__content-descr {
+    top: 10%;
+  }
+
+  .kamchatka__content-descr__number {
+    font-size: 30px;
+  }
+
+  .kamchatka__content-descr__text {
+    font-size: 10px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .glamping__content-left__img img {
+    width: 100%;
+  }
+
+  .footer__nav-list li {
+    margin-bottom: 20px;
+  }
+
+  .footer__nav-list {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .about__left-img img {
+    width: 100%;
+  }
+
+  .acquaintance__title {
+    font-size: 40px;
+    line-height: 1.5;
+  }
+
+  .acquaintance__content-text {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+
+  .acquaintance__content-text svg {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .baikal__title {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 430px) {
+  .kamchatka__content-svg svg {
+    width: 300px;
+  }
+
+  .kamchatka__item-img img {
+    width: 100%;
+  }
+
+  .kavkaz__title {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 400px) {
+  .left-descr__number {
+    font-size: 40px;
+  }
+
+  .left-descr__text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px) {
+  .places__item-title {
+    font-size: 18px;
+    width: 300px;
+  }
+}
+
+.webp .header { background-image: url(../img/bg/bg-1.webp); }
+
+.webp .baikal { background-image: url(../img/bg/bg-2.webp); }
+
+.webp .bg-section { background-image: url(../img/bg/bg-4.webp); }
+
+.webp .bg-section-footer { background-image: url(../img/bg/bg-3.webp); }
